@@ -1,51 +1,24 @@
 # Coachella-Weekend-2-Tweets
 
-Each '4.XX.19 coachella tweets.json' file is a collection of tweet_id's grouped by hour, with the files separated by date.
+Project Scope: 
+- We hope to identify the reactions of the people to the lineup of the artists at the music festival, i.e., the artists that were liked and who were not liked much so that the music festival can improve its lineup for the next year. We also hope that this dataset can be used for identifying the different elements of a music festival that people get excited enough to tweet about, either because they were successful or because they needed improvement. Also, we hope that this dataset can identify reasons why people attended the music festival, which could be used for future marketing efforts.
 
-
-Weekend Artist Lineup.json is the set of all artists who performed at coachella with their set information (start time, end time, stage)
-
-Use the 'Retreiving Tweet Dictionary for Coachella Artists' jupyter file as example of how to access the full tweet objects for all tweets sent during a specified artist's set time at Coachella.
-
-
-#new readme
-Scope: 
-
-We hope to identify the reactions of the people to the lineup of the artists at the music festival, i.e., the artists that were liked and who were not liked much so that the music festival can improve its lineup for the next year. We also hope that this dataset can be used for identifying the different elements of a music festival that people get excited enough to tweet about, either because they were successful or because they needed improvement. Also, we hope that this dataset can identify reasons why people attended the music festival, which could be used for future marketing efforts.
+Data Source:
+- As of now, we are only obtaining data from Twitter, and not across a range of other social media platforms such as Facebook and Instagram, which could also provide good insights. In future years, gathering data from those sources may be beneficial as well.
 
 Challenges:
+- Not able to use a Streaming API – we were not able use it as coachell was held in april.
+- The Standard API search request only goes back 7-days, so running a search for (…, q = ‘coachella’, …) would not work without some starting information like tweet_id or screen_name
+  - Solution: Found a kaggle dataset related to our topic that allowed us to gather the necessary information to run some standard API searches with Twython. Link Here(https://www.kaggle.com/pdp2600/coachella-2019-tweets)
 
-Below are the challanges we faced :​
+Final Datasets
+- Artist Lineup Dictionary: a json dictionary where the keys are all the artists that performed at Coachella and the values are the information related to their set times (start time, end time, stage, etc.)
+  - Artist set information scraped from Pitchfork (https://pitchfork.com/news/coachella-2019-lineup-and-schedule-all-the-set-times-you-need-to-know/)
+- Tweet ID Dictionaries: the colection tweet IDs from the Weekend 2 of Coachella, grouped by hour, with each JSON file separated by day.
 
-First being the Streaming API – we were not able use it as coachell was held in april.
+Code Implementation
+- Use the 'Retreiving Tweet Dictionary for Coachella Artists' jupyter file as example of how to access the full tweet objects for all tweets sent during a specified artist's set time at Coachella.
 
-Core API - Twitter standard search API only goes back 7-days so running a search for (…, q = ‘coachella’, …) would not work.
-
-
-Limitations:
-
-AS of now ,We are obtaining data only from one social media platform (ie, twitter), and not across a range of other social media platforms such as facebook and instagram which could also provide good insights.In futher, we would like to obtain the data from the rest .
-
-
-Implementations and Final Dataset:
-
-Artist LineUp dictionary and Tweet dictionaries are our final datasets.
-
-Artist LineUp dictionary : Scraped pitchfork to create a dictionary of all the artists who performed at Coachella, and their set information.
-
-Tweet Dictionaries:​
-
-Saved tweet objects into json dictionaries broken out by day and sorted by hour.  (For ease of use and distribution, final json files contain only the tweet_ids, not the full tweet objects)​
-
-Provided sample code for retrieving full tweets from specified artist in Artist Lineup Dictionary. ​
-
-Final Dataset and documentation available on Github.
-
-Each '4.XX.19 coachella tweets.json' file is a collection of tweet_id's grouped by hour, with the files separated by date.
-
-Weekend Artist Lineup.json is the set of all artists who performed at coachella with their set information (start time, end time, stage)
-
-Use the 'Retreiving Tweet Dictionary for Coachella Artists' jupyter file as example of how to access the full tweet objects for all tweets sent during a specified artist's set time at Coachella.
 
 
 
